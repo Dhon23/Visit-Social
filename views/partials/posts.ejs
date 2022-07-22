@@ -1,0 +1,22 @@
+<% if (result.length !== 0){ %> 
+<% result.forEach(el => { %>
+  <div class="container">
+    <div class="post-profile">
+      <div class="profile-photo">
+        <img src="<%= el.User.Profile.imgUrl %>" alt="">
+      </div>
+      <a><%= el.User.Profile.longName() %></a>
+    </div>
+    <div class="img">
+      <img src="<%= el.imgUrl %>" alt="">
+    </div>
+    <div class="caption">
+      <h4><%= el.title %></h4>
+      <p><%= el.content %></p>
+    </div>
+    <div class="tag">
+      <a><%= el.Tag.name %></a>
+    </div>
+  </div>
+<% }); %> 
+<% } %>

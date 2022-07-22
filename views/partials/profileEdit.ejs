@@ -1,0 +1,13 @@
+<% const { firstName, lastName, imgUrl } = result %> 
+
+<form class="form-edit" action="/user/profile/edit" method="post">
+  <label for="firstName">First Name</label>
+  <input type="text" name="firstName" id="firstName" value="<%= firstName %>">
+  <label for="lastName">Last Name</label>
+  <input type="text" name="lastName" id="lastName" value="<%= lastName %>">
+  <label for="imgUrl">Profile Image URL</label>
+  <input type="text" name="imgUrl" id="imgUrl" value="<%= imgUrl %>">
+  <div>
+    <button class="btn edit" type="submit">Edit Profile</button>
+  </div>
+</form>   

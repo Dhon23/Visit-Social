@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/loginRegister.css">
+  <title>Visit</title>
+</head>
+<body>
+  <main>
+    <div class="main">
+      <div class="image">
+        <h1>Visit</h1>
+        <p>Aplikasi ini membuat anda yang tidak tahu tempat rekreasi yang indah, 
+          anda akan tau lewat aplikasi ini. Di aplikasi ini terdapat foto tempat rekreasi 
+          yang di bagikan oleh orang lain beserta pengalamannya. 
+          tidak hanya itu anda juga bisa membagikan pengalaman anda kepada orang lain di aplikasi ini.
+        </p>
+      </div>
+      <div class="right">
+        <div class="form">
+          <h1>Visit</h1>
+            <% if (error) { %> 
+            <h4 style="color: red;"><%= error %></h4>
+            <% } %>
+          <form action="/createaccount" method="post">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <button type="submit">Register</button>
+          </form>
+          <a href="/login">Login</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

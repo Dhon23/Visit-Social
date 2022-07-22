@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+}
+
+header {
+  padding: 5px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 3px 0 6px gainsboro;
+  background-color: white;
+}
+
+.profile-img {
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid gainsboro;
+  border-radius: 50px;
+  background-color: rgb(255, 217, 147);
+}
+
+input.search {
+  width: 300px;
+  padding: 6px;
+  border: none;
+  outline: 1px solid rgb(105, 105, 105);
+  border-radius: 5px;
+}
+
+.btn, .logo {
+  user-select: none;
+  border: none;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px gray;
+}
+
+.logo {
+  color: black;
+}
+
+button.search {
+  padding: 6px 10px;
+  background-color: darkcyan;
+}
+
+main {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(201, 201, 201);
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.img {
+  width: 500px;
+  background-color: rgb(202, 202, 202);
+}
+
+.img img {
+  width: 500px;
+}
+
+.post-profile, .caption {
+  padding: 10px;
+}
+
+.post-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tag {
+  display: flex;
+  flex-direction: row;
+}
+
+.tag a {
+  margin: 0 0 10px 10px;
+  padding: 5px;
+  background-color: deepskyblue;
+  color: darkblue;
+  border-radius: 5px;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border: 1px solid gainsboro;
+  border-radius: 50px;
+  background-color: rgb(255, 217, 147);
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-photo img {
+  width: 40px;
+  height: 40px;
+}
+
+.my-profile {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px 50px;
+}
+
+.photo-profile {
+  flex: 1;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  border: 1px solid gainsboro;
+  margin-bottom: 10px;
+  background-color: rgb(255, 217, 147);
+  overflow: hidden;
+}
+
+.photo-longname {
+  text-align: center;
+}
+
+.photo-profile img {
+  width: 80px;
+}
+
+.show-email {
+  flex: 2;
+  margin: 10px 20px;
+}
+
+.show-email a {
+  margin-right: 10px;
+}
+
+.show-email .email {
+  font-size: 25px;
+}
+
+.edit {
+  padding: 5px;
+  background-color: rgb(139, 139, 139);
+}
+
+.logout {
+  padding: 5px;
+  background-color: brown;
+}
+
+.total-post {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.action a {
+  margin-right: 10px;
+}
+
+.delete {
+  padding: 8px 12px;
+  background-color: rgb(199, 21, 21);
+}
+
+.form-add, .form-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-add input, .form-add select, .form-edit input {
+  margin-top: 2px;
+  width: 300px;
+  padding: 6px;
+  border: none;
+  outline: 1px solid rgb(105, 105, 105);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-add select {
+  width: 150px;
+  padding: 5px;
+}
+
+.add {
+  padding: 10px;
+  background-color: darkcyan;
+}
+
+.form-add .add, .form-edit .edit {
+  padding: 8px 10px;
+}

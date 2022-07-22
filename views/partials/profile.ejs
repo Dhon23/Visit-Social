@@ -1,0 +1,33 @@
+<div class="my-profile">
+  <div class="photo-longname">
+    <div class="photo-profile">
+      <img src="<%= userData.Profile.imgUrl %>" alt="">
+    </div>
+    <a><%= userData.Profile.longName() %></a>
+  </div>
+  <div class="show-email">
+    <a class="email"><%= userData.email %></a>
+    <a class="btn edit" href="/user/profile/edit">Edit Profile</a>
+    <a class="btn logout" href="/user/logout">LogOut</a>
+  </div>
+  <div class="total-post">
+    <a style="font-weight: bolder;"><%= postData.length %></a>
+    <a>Posts</a>
+    <a class="btn add" href="/posts/story">Add Post</a>
+  </div>
+</div>
+
+<% postData.forEach(el => { %>
+  <div class="container">
+    <div class="img">
+      <img src="<%= el.imgUrl %>" alt="">
+    </div>
+    <div class="caption">
+      <h5><%= el.title %></h5>
+      <p><%= el.content %></p>
+    </div>
+    <div class="action">
+      <a class="btn delete" href="/posts/delete/<%= el.id %>">Delete</a>
+    </div>
+  </div>
+<% }); %> 
