@@ -232,3 +232,28 @@ main {
 .form-add .add, .form-edit .edit {
   padding: 8px 10px;
 }
+
+@media screen and (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+
+  main {
+    margin-top: 100px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .img {
+    width: 100%;
+    max-width: 700px;
+  }
+  
+  .img img {
+    width: 100%;
+    max-width: 700px;
+  }
+}
