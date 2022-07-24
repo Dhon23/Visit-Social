@@ -7,7 +7,6 @@ function isLogin(req, res, next) {
 }
 
 function isUser(req, res, next) {
-  console.log(req.session)
   if (req.session.role == "User") {
     next()
     return

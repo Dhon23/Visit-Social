@@ -20,7 +20,15 @@ module.exports = (sequelize, DataTypes) => {
   Post.init({
     title: DataTypes.STRING,
     content: DataTypes.STRING,
-    imgUrl: DataTypes.STRING,
+    imgUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: "ImgUrl is required" },
+        notNull: { msg: "ImgUrl is required" },
+        isUrl: { msg: "ImgUrl must be Url" }
+      }
+    },
     UserId: DataTypes.INTEGER,
     TagId: DataTypes.INTEGER
   }, {

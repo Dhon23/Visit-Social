@@ -114,16 +114,20 @@ main {
 .profile-photo {
   width: 40px;
   height: 40px;
-  border: 1px solid gainsboro;
   border-radius: 50px;
+  border: 1px solid gainsboro;
+  margin-right: 10px;
   background-color: rgb(255, 217, 147);
   overflow: hidden;
-  margin-right: 10px;
 }
 
 .profile-photo img {
   width: 40px;
-  height: 40px;
+}
+
+.post-profile a {
+  color: black;
+  text-decoration: none;
 }
 
 .my-profile {

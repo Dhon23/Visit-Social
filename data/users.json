@@ -1,0 +1,17 @@
+[
+  {
+    "email": "dadran0@homestead.com",
+    "password": "$2a$10$3gCIH39nePv8ZYtZKFvOX.QEvu.5lWtMS7Zl1adbZkCCnPP5H6iwC",
+    "role": "User"
+  },
+  {
+    "email": "pburcombe1@baidu.com",
+    "password": "$2a$10$3gCIH39nePv8ZYtZKFvOX.QEvu.5lWtMS7Zl1adbZkCCnPP5H6iwC",
+    "role": "User"
+  },
+  {
+    "email": "kquipp2@sohu.com",
+    "password": "$2a$10$3gCIH39nePv8ZYtZKFvOX.QEvu.5lWtMS7Zl1adbZkCCnPP5H6iwC",
+    "role": "User"
+  }
+]

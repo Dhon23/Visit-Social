@@ -5,7 +5,7 @@
       <div class="profile-photo">
         <img src="<%= el.User.Profile.imgUrl %>" alt="">
       </div>
-      <a><%= el.User.Profile.longName() %></a>
+      <a href="/user/profile/<%= el.UserId %>"><%= el.User.Profile.longName() %></a>
     </div>
     <div class="img">
       <img src="<%= el.imgUrl %>" alt="">

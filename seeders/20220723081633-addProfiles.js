@@ -13,18 +13,19 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     const data = JSON.parse(fs.readFileSync('./data/userGuest.json', 'utf-8'))
-     .map(el => {
-       return {
-         email: el.email,
-         password: el.password,
-         role: el.role,
-         createdAt : new Date(),
-         updatedAt : new Date()
-       }
-     });
+    const data = JSON.parse(fs.readFileSync('./data/profiles.json', 'utf-8'))
+    .map(el => {
+      return {
+        firstName: el.firstname,
+        lastName: el.lastname,
+        imgUrl: el.imgUrl,
+        UserId: el.UserId,
+        createdAt : new Date(),
+        updatedAt : new Date()
+      }
+    });
 
-    return queryInterface.bulkInsert('Users', data)
+    return queryInterface.bulkInsert('Profiles', data)
   },
 
   down (queryInterface, Sequelize) {
@@ -34,6 +35,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkInsert('Users', null)
+    return queryInterface.bulkInsert('Profiles', null)
   }
 };

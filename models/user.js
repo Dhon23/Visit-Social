@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: {msg: 'Please insert your email'},
         notNull: {msg: 'Please insert your email'},
-        contains: {args: [['@']], msg: 'Please enter your real email'}
+        isEmail: {msg: 'Please enter valid email'}
       }
     },
     password: {

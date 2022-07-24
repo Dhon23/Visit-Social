@@ -87,7 +87,30 @@ class Controller{
       res.render('index', { userData, postData, page: 'profile' });
     })
     .catch(err => {
-      console.log(err);
+      res.send(err)
+    })
+  }
+
+  static profileId(req, res) {
+    const { id } = req.params
+    let userData;
+    User.findByPk(id,{
+      include: [Profile],
+      attributes: ['email']
+    })
+    .then(resultUser => {
+      userData = resultUser.dataValues
+      return Post.findAll({
+        include: [Tag],
+        where: {
+          UserId: id
+        }
+      })
+    })
+    .then(postData => {
+      res.render('index', { userData, postData, page: 'profileId' });
+    })
+    .catch(err => {
       res.send(err)
     })
   }
@@ -135,15 +158,13 @@ class Controller{
           attributes: ['email'],
           include: [Profile]
         },
-        // {
-        //   model: [Tag] <<<====== gatau error kalau include Tag
-        // }
       ],
       where: {
         title: {
           [Op.iLike]: `%${search}%`
         }
-      }
+      },
+      order: [['createdAt', 'DESC']]
     })
     .then(result => {
       result.emoticon = convertEmoji('smile')
@@ -156,9 +177,10 @@ class Controller{
   }
 
   static storyForm(req, res){
+    const { error } = req.query 
     Tag.findAll()
     .then(result => {
-      res.render('index', { result, page: 'postAdd' })
+      res.render('index', { error, result, page: 'postAdd' })
     })
     .catch(err => {
       res.send(err);
@@ -173,6 +195,11 @@ class Controller{
       res.redirect('/user/profile')
     })
     .catch(err => {
+      if (err.name === "SequelizeValidationError") {
+        const msg = err.errors.map(el => el.message)
+        res.redirect('/posts/story?error=' + msg);
+        return
+      }
       res.send(err)
     })
   }

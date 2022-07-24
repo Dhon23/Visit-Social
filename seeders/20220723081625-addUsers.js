@@ -13,7 +13,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     const data = JSON.parse(fs.readFileSync('./data/userGuest.json', 'utf-8'))
+    const data = JSON.parse(fs.readFileSync('./data/users.json', 'utf-8'))
      .map(el => {
        return {
          email: el.email,

@@ -1,0 +1,20 @@
+[
+  {
+    "firstname": "Vern",
+    "lastname": "Farfolomeev",
+    "imgUrl": "https://robohash.org/enimnamest.jpg?size=50x50&set=set1",
+    "UserId": 2
+  },
+  {
+    "firstname": "Jaclyn",
+    "lastname": "Lobbe",
+    "imgUrl": "https://robohash.org/placeatquised.jpg?size=50x50&set=set1",
+    "UserId": 3
+  },
+  {
+    "firstname": "Reiko",
+    "lastname": "Newvell",
+    "imgUrl": "https://robohash.org/quasaccusantiumab.jpg?size=50x50&set=set1",
+    "UserId": 4
+  }
+]
