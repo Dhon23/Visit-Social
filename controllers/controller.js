@@ -69,50 +69,50 @@ class Controller{
 
   static profile(req, res){
     const UserId = req.session.UserId
-    let userData;
-    User.findByPk(UserId,{
-      include: [Profile],
-      attributes: ['email']
-    })
-    .then(resultUser => {
-      userData = resultUser.dataValues
-      return Post.findAll({
+
+    Promise.all([
+      User.findByPk(UserId,{
+        include: [Profile],
+        attributes: ['email']
+      }),
+      Post.findAll({
         include: [Tag],
         where: {
           UserId
-        }
+        },
+        order: [['createdAt', 'DESC']]
       })
-    })
-    .then(postData => {
-      res.render('index', { userData, postData, page: 'profile' });
-    })
-    .catch(err => {
-      res.send(err)
-    })
+    ])
+      .then((result) => {
+        const [userData, postData] = result;
+        res.render('index', { userData, postData, page: 'profile' });
+      }).catch((err) => {
+        res.send(err)
+      });
   }
 
   static profileId(req, res) {
     const { id } = req.params
-    let userData;
-    User.findByPk(id,{
-      include: [Profile],
-      attributes: ['email']
-    })
-    .then(resultUser => {
-      userData = resultUser.dataValues
-      return Post.findAll({
+
+    Promise.all([
+      User.findByPk(id,{
+        include: [Profile],
+        attributes: ['email']
+      }),
+      Post.findAll({
         include: [Tag],
         where: {
           UserId: id
-        }
+        },
+        order: [['createdAt', 'DESC']]
       })
-    })
-    .then(postData => {
-      res.render('index', { userData, postData, page: 'profileId' });
-    })
-    .catch(err => {
-      res.send(err)
-    })
+    ])
+      .then((result) => {
+        const [userData, postData] = result;
+        res.render('index', { userData, postData, page: 'profileId' });
+      }).catch((err) => {
+        res.send(err);
+      });
   }
 
   static editProfileForm(req, res){
@@ -232,6 +232,5 @@ class Controller{
     res.send()
   }
 }
-
 
 module.exports = Controller
